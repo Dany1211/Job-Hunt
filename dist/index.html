@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="output.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+<link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+</head>
+<body>
+    <!-- navigation bar  -->
+    <nav x-data="{ isOpen: false }" class="relative  shadow-sm shadow-slate-100">
+        <div class="container px-6 py-4 mx-auto">
+            <div class="lg:flex lg:items-center lg:justify-between">
+                <div class="flex items-center justify-between">
+                    <a href="#" class="flex text-4xl space-x-2 font-serif font-semibold">
+                        <h1 class="">JOB</h1><h1 class="text-[#14B8A6]">hunt</h1>
+                    </a>
+    
+                    <!-- Mobile menu button -->
+                    <div class="flex lg:hidden">
+                        <button x-cloak @click="isOpen = !isOpen" type="button" class="text-black"   aria-label="toggle menu">
+                            <svg x-show="!isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M4 8h16M4 16h16" />
+                            </svg>
+                    
+                            <svg x-show="isOpen" xmlns="http://www.w3.org/2000/svg" class="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Mobile Menu open: "block", Menu closed: "hidden" -->
+                <div x-cloak :class="[isOpen ? 'translate-x-0 opacity-100 ' : 'opacity-0 -translate-x-full']" class="absolute inset-x-0 z-20 w-full px-6 py-4 transition-all duration-300 ease-in-out bg-white  lg:mt-0 lg:p-0 lg:top-0 lg:relative lg:bg-transparent lg:w-auto lg:opacity-100 lg:translate-x-0 lg:flex lg:items-center">
+                    <div class="flex flex-col -mx-6 lg:flex-row lg:items-center lg:mx-8">
+                        <a href="#" class="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 hover:text-[#14B8A6] hover:underline hover:u ">Home</a>
+                        <a href="#" class="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 hover:text-[#14B8A6] hover:underline hover:u ">Browse Jobs</a>
+                        <a href="#" class="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 hover:text-[#14B8A6] hover:underline hover:u ">Dashboard</a>
+                        <a href="#" class="px-3 py-2 mx-3 mt-2  transition-colors duration-300 transform rounded-md lg:mt-0 hover:text-[#14B8A6] hover:underline hover:u ">Contact</a>
+                    </div>
+    
+                    <div class="flex items-center mt-4 space-x-2 lg:mt-0">
+                        <button class="hidden mx-4 transition-colors duration-300 transform lg:block text-[#14B8A6] font-semibold" aria-label="show notifications">
+                            <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M15 17H20L18.5951 15.5951C18.2141 15.2141 18 14.6973 18 14.1585V11C18 8.38757 16.3304 6.16509 14 5.34142V5C14 3.89543 13.1046 3 12 3C10.8954 3 10 3.89543 10 5V5.34142C7.66962 6.16509 6 8.38757 6 11V14.1585C6 14.6973 5.78595 15.2141 5.40493 15.5951L4 17H9M15 17V18C15 19.6569 13.6569 21 12 21C10.3431 21 9 19.6569 9 18V17M15 17H9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </button>
+    
+                        <button type="button" class="flex items-center focus:outline-none " aria-label="toggle profile dropdown">
+                            <div class="profile w-14 h-14 overflow-hidden border-2 border-gray-400 rounded-full">
+                                <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80" class="object-cover w-full h-full" alt="avatar">
+                            </div>
+    
+                            <h3 class="mx-2 text-gray-700 dark:text-gray-200 lg:hidden">Khatab wedaa</h3>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>  
+    <!-- hero section goes here-->
+    <div class="lg:flex">
+        <div class=" items-center justify-center w-full px-6 py-8 lg:h-[32rem] lg:w-1/2 ml-16">
+            <div class="hero max-w-xl text-center space-y-8 mt-28">
+                <h1 class="text-6xl font-bold">Connect with leading <span class="text-[#14B8A6]">employers</span></h1>
+                <p class="text-xl font-medium">Find the job that fits you well.</p>
+                <p class="text-5xl">Start the <span class="text-[#14B8A6] font-bold">Search</span> now.</p>
+                
+            </div>
+            <div class="btns1 flex flex-col mt-6 space-y-3 lg:space-y-0 lg:flex-row px-10 ml-20 mt-16">
+                <a href="#" class="block px-8 py-4 text-md font-medium tracking-wider text-center text-white transition-colors duration-300 transform bg-gray-900 rounded-md hover:bg-[#14B8A6]">Get Started</a>
+                <a href="#" class="block px-8 py-4 text-md font-medium tracking-wider text-center text-black transition-colors duration-300 transform bg-gray-200 rounded-md lg:mx-4 hover:bg-[#14B8A6]">Learn More</a>
+            </div>
+        </div>
+
+        <div class="heroimg w-full h-64 lg:w-1/2 lg:h-auto">
+            <div class="w-full h-full bg-cover rounded-lg" style="background-image: url(../Job\ Interview.jpg)">
+            </div>
+        </div>
+    </div>
+    <!-- cards section  -->
+    <div class="cardswhole mt-28 flex justify-around w-[100%] mb-10">
+        <div class="cards1 space-y-8 w-[50%] flex flex-col items-center">
+            <div class="job1 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class=" w-1/3 bg-contain" style="background-image: url(../Free\ Vector\ |\ Google\ sitemap\ concept\ illustration.jpg)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold text-black text-black">VK infotech</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Full stack developer</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">Remote</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $2100</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>
+            <div class="job2 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class="w-1/3 bg-contain" style="background-image: url(../Free\ Vector\ |\ Linear\ flat\ real\ estate\ profit\ icons\ website\ vector\ illustration\ realtor\ hand\ coins\ money\ and\ smart.jpg)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold text-black text-black">Fin Com</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Senior Manager</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">On site</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $1860</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>
+            <div class="job3 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class="w-1/3 bg-contain" style="background-image: url(../Download\ Woman\ Engineer\ Checking\ Blueprint\ in\ Construction\ Site\ Concept\ for\ free.jpg)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold text-black text-black">Vishal Structures</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Junior Civil Engineer</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">On site</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $1100</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>   
+        </div>
+        <div class="cards2 space-y-8 w-[50%] flex flex-col items-center">
+            <div class="job4 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class="w-1/3 bg-contain" style="background-image: url(../Free\ Vector\ |\ Science\ concept\ with\ microscope.jpg)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold  text-black">Apex Pathologies</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Lab Assistant</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">On site</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $850</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>
+            <div class="job5 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class="w-1/3 bg-contain" style="background-image: url(../Premium\ Vector\ |\ Pharmacy\ online\ shop\ concept\ for\ ui\,\ web\,\ homepage_\ hand\ of\ pharmacist\ give\ bag\ with\ medications\,\ pills.\ bottle\,\ spray\,\ medical\ bag\ are\ shown.)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold text-black">Wellness Pharmacy</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Salesman</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">On site</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $620</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>
+            <div class="job6 flex max-w-md w-[100%] overflow-hidden bg-white rounded-lg shadow-md shadow-[#14B8A6] text-black">
+                <div class="w-1/3 bg-contain" style="background-image: url(../AI\ and\ Cryptocurrency_\ Enhancing\ Each\ Other\ for\ Mutual\ Progress.jpg)"></div>
+            
+                <div class="w-2/3 p-4 md:p-4">
+                    <h1 class="text-xl font-bold text-black">EthServices</h1>
+            
+                    <i class="ri-profile-line"></i><span class="ml-2 text-sm text-centre text-black">Blockchain developer</span>
+            
+                    <div class="flex mt-2 item-center">
+                        <i class="ri-map-pin-line"></i> <span class="ml-2">Remote</span>
+                    </div>
+            
+                    <div class="flex justify-between mt-3 item-center">
+                        <h1 class="text-lg font-bold text-black md:text-xl"> $2450</h1>
+                        <button class="px-5 py-2 rounded-md hover:text-black text-xs font-bold text-white transition-colors duration-300 transform bg-black  hover:bg-[#14B8A6]  focus:outline-none ">Enquire</button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div> 
+    <!-- browse more button  -->
+    <div class="animate-bounce text-center"><button class="bg-black text-white hover:bg-[#14B8A6] rounded-md px-5 py-3 font-semibold transition-colors duration-300">Browse More</button></div>
+    <!-- Features starts here -->
+    <section class="text-gray-600 body-font mb-20">
+        <div class="container pb-5 pt-20 mx-auto">
+          <div class="cover1 text-center mb-12">
+            <h1 class=" sm:text-3xl text-6xl font-semibold text-center title-font text-[#14B8A6] mb-4">We've Got You Covered</h1>
+          </div>
+          <div class="flex flex-wrap lg:w-4/5 sm:mx-auto sm:mb-2 -mx-2">
+            <div class="p-2 sm:w-1/2 w-full">
+              <div class="feature1 bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Job Management</span>
+              </div>
+            </div>
+            <div class="feature2 p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Flexible Invoicing</span>
+              </div>
+            </div>
+            <div class="feature3 p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Job Notifications</span>
+              </div>
+            </div>
+            <div class="feature4 p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Customer Portal</span>
+              </div>
+            </div>
+            <div class="feature5 p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Work Assistance</span>
+              </div>
+            </div>
+            <div class="feature6 p-2 sm:w-1/2 w-full">
+              <div class="bg-gray-100 rounded flex p-4 h-full items-center">
+                <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" class="text-[#14B8A6] w-6 h-6 flex-shrink-0 mr-4" viewBox="0 0 24 24">
+                  <path d="M22 11.08V12a10 10 0 11-5.93-9.14"></path>
+                  <path d="M22 4L12 14.01l-3-3"></path>
+                </svg>
+                <span class="title-font font-medium">Safety Checklist</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center"><button class="animate-bounce hover:bg-[#14B8A6] text-white bg-black rounded-md px-5 py-3 font-semibold transition-colors duration-300">Learn More</button></div>
+    </section>
+      <!-- Stats Section -->
+      <div id="stats1" class=" py-16 bg-[#14B8A6]">
+        <div class="grid row-gap-8 sm:grid-cols-3">
+          <div class="text-center">
+            <h6 class="text-5xl font-bold text-deep-purple-accent-400">4600+</h6>
+            <p class="font-bold">Companies</p>
+          </div>
+          <div class="text-center">
+            <h6 class="text-5xl font-bold text-deep-purple-accent-400">51000+</h6>
+            <p class="font-bold">Jobs</p>
+          </div>
+          <div class="text-center">
+            <h6 class="text-5xl font-bold text-deep-purple-accent-400">40000+</h6>
+            <p class="font-bold">Hired</p>
+          </div>
+        </div>
+      </div>
+      <!-- premium pricing section  -->
+    <div class="bg-white my-16 flex ">
+       
+        <div class="container mx-auto  ">
+            <p class="text-5xl font-semibold text-center text-black">
+                Go Premium
+            </p>
+    
+    
+    
+            <div class="mt-6 space-y-8  xl:mt-12">
+                <div class="basic flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border cursor-pointer rounded-xl dark:border-gray-700">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#14B8A6] sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+    
+                        <div class="flex flex-col items-center mx-5 space-y-1">
+                            <h2 class="text-lg font-medium text-black sm:text-2xl ">Basic</h2>
+                            
+                            <div class="px-2 text-xs text-black bg-[#14B8A6] rounded-full sm:px-4 sm:py-1 ">
+                                Save 5%
+                            </div>
+                        </div>
+                    </div>
+    
+                    <h2 class="text-2xl font-semibold text-black sm:text-3xl ">$29 <span class="text-base font-medium">/Month</span></h2>
+                </div>
+    
+                <div class="popular flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border border-[#14B8A6] cursor-pointer rounded-xl">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#14B8A6] sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+    
+                        <div class="flex flex-col items-center mx-5 space-y-1">
+                            <h2 class="text-lg font-medium text-black sm:text-2xl ">Popular</h2>
+                            <div class="px-2 text-xs text-black bg-[#14B8A6] rounded-full sm:px-4 sm:py-1  ">
+                                Save 10%
+                            </div>
+                        </div>
+                    </div>
+    
+                    <h2 class="text-2xl font-semibold text-black sm:text-4xl">$49 <span class="text-base font-medium">/Month</span></h2>
+                </div>
+    
+                <div class="enterprise flex items-center justify-between max-w-2xl px-8 py-4 mx-auto border border-black cursor-pointer rounded-xl ">
+                    <div class="flex items-center">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#14B8A6] sm:h-9 sm:w-9" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+    
+                        <div class="flex flex-col items-center mx-5 space-y-1">
+                            <h2 class="text-lg font-medium text-black sm:text-2xl ">Enterprise</h2>
+                            <div class="px-2 text-xs text-black bg-[#14B8A6] rounded-full sm:px-4 sm:py-1  ">
+                                Save 20%
+                            </div>
+                        </div>
+                    </div>
+    
+                    <h2 class="text-2xl font-semibold text-black sm:text-3xl ">$79 <span class="text-base font-medium">/Month</span></h2>
+                </div>
+    
+                <div class="flex justify-center">
+                    <button class="animate-bounce px-8 py-2 tracking-wide text-white capitalize transition-colors duration-300 transform bg-[#14B8A6] hover:scale-105 transform transition-transform rounded-md hover:bg-[#14B8A6] text-lg font-semibold focus:outline-none  focus:ring focus:ring-opacity-80">
+                        Choose Plan
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- email section  -->
+    <div class="email bg-black py-16 px-6 font-[sans-serif]">
+        <div class="max-w-5xl mx-auto text-center text-white">
+          <h2 class="text-4xl font-extrabold mb-4">Subscribe to Our Newsletter</h2>
+          <p class="text-base text-gray-400">Stay updated with the latest job updates,postings and opportunities.</p>
+          <div class="mt-10">
+            <input type="email" placeholder="Enter your email" class="w-full sm:w-96 bg-gray-50 py-3.5 px-4 text-[#333] text-base focus:outline-none rounded" />
+            <button class="max-sm:mt-8 sm:ml-4 bg-[#14B8A6]  text-white text-base font-semibold py-3.5 px-6 rounded hover:shadow-md hover:transition-transform transition-transform hover:scale-105 focus:outline-none">
+              Subscribe
+            </button>
+          </div>
+        </div>
+    </div>
+    <!-- footer section  -->
+<footer class="bg-[#14B8A6] mt-16 ">
+    <div class="mx-auto w-full max-w-screen-xl">
+      <div class="grid grid-cols-2 gap-8 px-4 py-6 lg:py-8 md:grid-cols-4">
+        <div>
+            <h2 class="mb-6 text-lg font-bold text-black uppercase ">Company</h2>
+            <ul class="text-black font-medium">
+                <li class="mb-4">
+                    <a href="#" class=" hover:underline">About</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Careers</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Brand Center</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Blog</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-lg font-bold text-black uppercase ">Help center</h2>
+            <ul class="text-black font-medium">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Discord Server</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Twitter</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Facebook</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-lg font-bold text-black uppercase">Legal</h2>
+            <ul class="text-black font-medium">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Privacy Policy</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Licensing</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Terms &amp; Conditions</a>
+                </li>
+            </ul>
+        </div>
+        <div>
+            <h2 class="mb-6 text-lg font-bold text-black uppercase">Download</h2>
+            <ul class="text-black">
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">iOS</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Android</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">Windows</a>
+                </li>
+                <li class="mb-4">
+                    <a href="#" class="hover:underline">MacOS</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="px-4 py-6 bg-[#14B8A6] md:flex md:items-center md:justify-between">
+        <span class="text-sm text-black sm:text-center">© 2024 <a href="https://flowbite.com/">JOB hunt</a>. All Rights Reserved.
+        </span>
+        <div class="flex mt-4 sm:justify-center md:mt-0 space-x-5 rtl:space-x-reverse">
+            <a href="#" class="text-black dark:hover:text-white">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 8 19">
+                        <path fill-rule="evenodd" d="M6.135 3H8V0H6.135a4.147 4.147 0 0 0-4.142 4.142V6H0v3h2v9.938h3V9h2.021l.592-3H5V3.591A.6.6 0 0 1 5.592 3h.543Z" clip-rule="evenodd"/>
+                    </svg>
+                  <span class="sr-only">Facebook page</span>
+              </a>
+              <a href="#" class="text-black dark:hover:text-white">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 21 16">
+                        <path d="M16.942 1.556a16.3 16.3 0 0 0-4.126-1.3 12.04 12.04 0 0 0-.529 1.1 15.175 15.175 0 0 0-4.573 0 11.585 11.585 0 0 0-.535-1.1 16.274 16.274 0 0 0-4.129 1.3A17.392 17.392 0 0 0 .182 13.218a15.785 15.785 0 0 0 4.963 2.521c.41-.564.773-1.16 1.084-1.785a10.63 10.63 0 0 1-1.706-.83c.143-.106.283-.217.418-.33a11.664 11.664 0 0 0 10.118 0c.137.113.277.224.418.33-.544.328-1.116.606-1.71.832a12.52 12.52 0 0 0 1.084 1.785 16.46 16.46 0 0 0 5.064-2.595 17.286 17.286 0 0 0-2.973-11.59ZM6.678 10.813a1.941 1.941 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.919 1.919 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Zm6.644 0a1.94 1.94 0 0 1-1.8-2.045 1.93 1.93 0 0 1 1.8-2.047 1.918 1.918 0 0 1 1.8 2.047 1.93 1.93 0 0 1-1.8 2.045Z"/>
+                    </svg>
+                  <span class="sr-only">Discord community</span>
+              </a>
+              <a href="#" class="text-black dark:hover:text-white">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 17">
+                    <path fill-rule="evenodd" d="M20 1.892a8.178 8.178 0 0 1-2.355.635 4.074 4.074 0 0 0 1.8-2.235 8.344 8.344 0 0 1-2.605.98A4.13 4.13 0 0 0 13.85 0a4.068 4.068 0 0 0-4.1 4.038 4 4 0 0 0 .105.919A11.705 11.705 0 0 1 1.4.734a4.006 4.006 0 0 0 1.268 5.392 4.165 4.165 0 0 1-1.859-.5v.05A4.057 4.057 0 0 0 4.1 9.635a4.19 4.19 0 0 1-1.856.07 4.108 4.108 0 0 0 3.831 2.807A8.36 8.36 0 0 1 0 14.184 11.732 11.732 0 0 0 6.291 16 11.502 11.502 0 0 0 17.964 4.5c0-.177 0-.35-.012-.523A8.143 8.143 0 0 0 20 1.892Z" clip-rule="evenodd"/>
+                </svg>
+                  <span class="sr-only">Twitter page</span>
+              </a>
+              <a href="#" class="text-black dark:hover:text-white">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M10 .333A9.911 9.911 0 0 0 6.866 19.65c.5.092.678-.215.678-.477 0-.237-.01-1.017-.014-1.845-2.757.6-3.338-1.169-3.338-1.169a2.627 2.627 0 0 0-1.1-1.451c-.9-.615.07-.6.07-.6a2.084 2.084 0 0 1 1.518 1.021 2.11 2.11 0 0 0 2.884.823c.044-.503.268-.973.63-1.325-2.2-.25-4.516-1.1-4.516-4.9A3.832 3.832 0 0 1 4.7 7.068a3.56 3.56 0 0 1 .095-2.623s.832-.266 2.726 1.016a9.409 9.409 0 0 1 4.962 0c1.89-1.282 2.717-1.016 2.717-1.016.366.83.402 1.768.1 2.623a3.827 3.827 0 0 1 1.02 2.659c0 3.807-2.319 4.644-4.525 4.889a2.366 2.366 0 0 1 .673 1.834c0 1.326-.012 2.394-.012 2.72 0 .263.18.572.681.475A9.911 9.911 0 0 0 10 .333Z" clip-rule="evenodd"/>
+                  </svg>
+                  <span class="sr-only">GitHub account</span>
+              </a>
+              <a href="#" class="text-black dark:hover:text-white">
+                  <svg class="w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M10 0a10 10 0 1 0 10 10A10.009 10.009 0 0 0 10 0Zm6.613 4.614a8.523 8.523 0 0 1 1.93 5.32 20.094 20.094 0 0 0-5.949-.274c-.059-.149-.122-.292-.184-.441a23.879 23.879 0 0 0-.566-1.239 11.41 11.41 0 0 0 4.769-3.366ZM8 1.707a8.821 8.821 0 0 1 2-.238 8.5 8.5 0 0 1 5.664 2.152 9.608 9.608 0 0 1-4.476 3.087A45.758 45.758 0 0 0 8 1.707ZM1.642 8.262a8.57 8.57 0 0 1 4.73-5.981A53.998 53.998 0 0 1 9.54 7.222a32.078 32.078 0 0 1-7.9 1.04h.002Zm2.01 7.46a8.51 8.51 0 0 1-2.2-5.707v-.262a31.64 31.64 0 0 0 8.777-1.219c.243.477.477.964.692 1.449-.114.032-.227.067-.336.1a13.569 13.569 0 0 0-6.942 5.636l.009.003ZM10 18.556a8.508 8.508 0 0 1-5.243-1.8 11.717 11.717 0 0 1 6.7-5.332.509.509 0 0 1 .055-.02 35.65 35.65 0 0 1 1.819 6.476 8.476 8.476 0 0 1-3.331.676Zm4.772-1.462A37.232 37.232 0 0 0 13.113 11a12.513 12.513 0 0 1 5.321.364 8.56 8.56 0 0 1-3.66 5.73h-.002Z" clip-rule="evenodd"/>
+                </svg>
+                  <span class="sr-only">Dribbble account</span>
+              </a>
+        </div>
+      </div>
+    </div>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" integrity="sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" integrity="sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="script.js"></script>
+</body>
+</html>
